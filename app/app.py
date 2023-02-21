@@ -3,7 +3,10 @@ import jsonpickle
 import pickle
 
 app = Flask(__name__)
- # Load model
+
+# Load the pickled data and store it in a global variable
+with open('finalized_model.sav', 'rb') as f:
+    model = pickle.load(f)
    
 
 
@@ -26,7 +29,4 @@ def process_form():
 
 
 if __name__ == "__main__":
-    with open('finalized_model.sav', 'rb') as f:
-        print("kp")
-        model = pickle.load(f)
     app.run(host="0.0.0.0", port=5000)
