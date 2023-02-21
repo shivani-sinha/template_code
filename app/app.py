@@ -27,7 +27,7 @@ def test():
 @app.route('/api/testmodel', methods=['GET'])
 def process_form():
     #data = request.form
-    data = model.predict(33.2)  
+    data = model.predict([[33.44]])  
     return data
 
 
