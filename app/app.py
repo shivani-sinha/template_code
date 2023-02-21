@@ -28,7 +28,8 @@ def test():
 def process_form():
     #data = request.form
     data = model.predict([[33.44]])  
-    return data
+    data_str = ", ".join(str(x) for x in data)
+    return data_str
 
 
 if __name__ == "__main__":
