@@ -27,7 +27,7 @@ def test():
 @app.route('/api/testmodel', methods=['POST'])
 def process_form():
     data = request.form
-    data = model.predict([[int(data['testdata'])]])  
+    data = model.predict([[float(data['testdata'])]])  
     data_str = ", ".join(str(x) for x in data)
     return data_str
 
