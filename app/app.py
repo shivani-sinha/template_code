@@ -1,6 +1,9 @@
 from flask import Flask, request, Response 
 import jsonpickle
 import pickle
+from sklearn import preprocessing, svm
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
 
 app = Flask(__name__)
 
