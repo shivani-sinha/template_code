@@ -24,10 +24,10 @@ def test():
 
 
 
-@app.route('/api/testmodel', methods=['GET'])
+@app.route('/api/testmodel', methods=['POST'])
 def process_form():
-    #data = request.form
-    data = model.predict([[33.44]])  
+    data = request.form
+    data = model.predict([[data['testdata']]])  
     data_str = ", ".join(str(x) for x in data)
     return data_str
 
