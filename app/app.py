@@ -3,7 +3,8 @@ import jsonpickle
 import pickle
 
 app = Flask(__name__)
-
+ # Load model
+   
 
 
 @app.route('/api/test', methods=['GET'])
@@ -25,7 +26,7 @@ def process_form():
 
 
 if __name__ == "__main__":
-    # Load model
     with open('finalized_model.sav', 'rb') as f:
+        print("kp")
         model = pickle.load(f)
     app.run(host="0.0.0.0", port=5000)
